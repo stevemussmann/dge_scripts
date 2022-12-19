@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#NCBI BLAST version 2.12.0+
+
 FASTA="rbs_merged.longest.fasta"
 DB="/home/aftc/Desktop/projects/dx2104/blast/sprot_blastdb/uniprot_sprot.fasta"
 
