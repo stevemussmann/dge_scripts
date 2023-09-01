@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/535760345.svg)](https://zenodo.org/badge/latestdoi/535760345)
+
 # dge_scripts
 Scripts for differential gene expression analysis
 
