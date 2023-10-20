@@ -1,7 +1,7 @@
 [![DOI](https://zenodo.org/badge/535760345.svg)](https://zenodo.org/badge/latestdoi/535760345)
 
 # dge_scripts
-Scripts for differential gene expression analysis
+This repository includes code associated with Gilbert et al.: "Why is it too cold? Toward a mechanistic understanding of cold-water pollution on poor recruitment of an endangered fish":
 
 1. **RNAseq_assembly_pipeline.sh** - used to trim/filter RNAseq fastq data, align to Razorback Sucker reference genome, and estimate transcript abundance
 2. **getLongestTranscript.pl** - returns longest transcript of each gene from the reference-guided hisat2/stringtie transcriptome assembly. 
