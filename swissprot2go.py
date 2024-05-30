@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import sys, os
+import ssl #nonsense required to make this work on the DOI network
 from urllib.request import urlopen
 
 ##
@@ -32,7 +33,8 @@ for line in infile:
         outfile.write('refseq_id\tuniprot_id\tuniprot_description\tGO_ids\tGO_BP\tGO_MF\tGO_CC\n')
     line=line.rstrip()
     refseq_id=line
-    page = urlopen('https://rest.uniprot.org/uniprotkb/stream?fields=accession%2Cid%2Cgo_id%2Cgo%2Cgo_p%2Cgo_f%2Cgo_c&format=tsv&query=%28accession%3A'+refseq_id+'%29').read()
+    context = ssl._create_unverified_context() # nonsense required to make this work on the DOI network
+    page = urlopen('https://rest.uniprot.org/uniprotkb/stream?fields=accession%2Cid%2Cgo_id%2Cgo%2Cgo_p%2Cgo_f%2Cgo_c&format=tsv&query=%28accession%3A'+refseq_id+'%29', context=context).read()
     #page = urlopen('https://www.uniprot.org/uniprot/?query=database%3A%28type%3Arefseq+'+refseq_id+'%29&sort=score&columns=id,entry%20name,go-id,go,go(biological%20process),go(molecular%20function),go(cellular%20component)&format=tab').read()
     try:
         page = page.decode('utf-8').splitlines()[1]
