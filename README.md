@@ -14,3 +14,10 @@ This repository includes code associated with Gilbert et al.: "Why is it too col
     1. Get Swissprot IDs from tab-delimited (-outfmt 6) BLAST output with command `awk '{print $2}' blast_result.tsv | sort | uniq`
     2. **swissprot2go.py** - Programatically accesses online GO database to recover GO terms for Swissprot IDs. This script was modified from code available at https://2-bitbio.com/post/how-to-get-go-terms-from-refseq-ids/. Instructions for further modifying URL request (if necessary) in swissprot2go.py are available at: https://www.uniprot.org/help/api_queries.
     3. **swissprot2go.sh** - operates swissprot2go.py script. 
+
+# dependency installation
+Most dependencies for **RNAseq_assembly_pipeline.sh** can be installed from conda. Cufflinks has compatibility issues with the other programs due to python and may need to be installed in a separate environment. 
+```
+conda create -n rnaseq -c conda-forge -c bioconda hisat2=2.2.1 trimmomatic=0.39 prinseq=0.20.4 stringtie=2.2.3 samtools=1.21 gffcompare=0.12.6
+conda create -n cufflinks -c conda-forge -c bioconda cufflinks
+```
