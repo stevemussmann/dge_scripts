@@ -3,7 +3,9 @@
 # dge_scripts
 This repository includes code associated with Gilbert et al. 2024: 
 
-Gilbert, E.I., Diver, T.A., Mussmann, S.M., Saltzgiver, M.J., Knight, W.K., Durst, S.L., Farrington, M.A., Clark Barkalow, S.L., Tobler, M. and Franssen, N.R. (2024), Why Is It Too Cold? Towards a Mechanistic Understanding of Cold-Water Pollution Effects on Recruitment of an Imperiled Warmwater Fish. Molecular Ecology e17588. https://doi.org/10.1111/mec.17588
+Gilbert, E.I., Diver, T.A., Mussmann, S.M., Saltzgiver, M.J., Knight, W.K., Durst, S.L., Farrington, M.A., Clark Barkalow, S.L., Tobler, M. and Franssen, N.R. (2024), Why is it too cold? Towards a mechanistic understanding of cold-water pollution effects on recruitment of an imperiled warmwater fish. Molecular Ecology e17588. https://doi.org/10.1111/mec.17588
+
+##List of Scripts:
 
 1. **RNAseq_assembly_pipeline.sh** - used to trim/filter RNAseq fastq data, align to Razorback Sucker reference genome, and estimate transcript abundance
 2. **getLongestTranscript.pl** - returns longest transcript of each gene from the reference-guided hisat2/stringtie transcriptome assembly. 
@@ -17,9 +19,15 @@ Gilbert, E.I., Diver, T.A., Mussmann, S.M., Saltzgiver, M.J., Knight, W.K., Durs
     2. **swissprot2go.py** - Programatically accesses online GO database to recover GO terms for Swissprot IDs. This script was modified from code available at https://2-bitbio.com/post/how-to-get-go-terms-from-refseq-ids/. Instructions for further modifying URL request (if necessary) in swissprot2go.py are available at: https://www.uniprot.org/help/api_queries.
     3. **swissprot2go.sh** - operates swissprot2go.py script. 
 
-# dependency installation
-Most dependencies for **RNAseq_assembly_pipeline.sh** can be installed from conda. Cufflinks has compatibility issues with the other programs due to python and may need to be installed in a separate environment. 
+## dependency installation
+Most dependencies for **RNAseq_assembly_pipeline.sh** can be installed from conda. Cufflinks has compatibility issues with the other programs due to python and may need to be installed in a separate conda environment. 
+
+Conda environment `rnaseq` with hisat2, trimmomatic, prinseq, stringtie, samtools, and gffcompare:
 ```
 conda create -n rnaseq -c conda-forge -c bioconda hisat2=2.2.1 trimmomatic=0.39 prinseq=0.20.4 stringtie=2.2.3 samtools=1.21 gffcompare=0.12.6
+```
+
+Conda environment `cufflinks`:
+```
 conda create -n cufflinks -c conda-forge -c bioconda cufflinks
 ```
