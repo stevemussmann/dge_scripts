@@ -1,7 +1,9 @@
 [![DOI](https://zenodo.org/badge/535760345.svg)](https://zenodo.org/badge/latestdoi/535760345)
 
 # dge_scripts
-This repository includes code associated with Gilbert et al.: "Why is it too cold? Toward a mechanistic understanding of cold-water pollution on poor recruitment of an endangered fish":
+This repository includes code associated with Gilbert et al. 2024: 
+
+Gilbert, E.I., Diver, T.A., Mussmann, S.M., Saltzgiver, M.J., Knight, W.K., Durst, S.L., Farrington, M.A., Clark Barkalow, S.L., Tobler, M. and Franssen, N.R. (2024), Why Is It Too Cold? Towards a Mechanistic Understanding of Cold-Water Pollution Effects on Recruitment of an Imperiled Warmwater Fish. Molecular Ecology e17588. https://doi.org/10.1111/mec.17588
 
 1. **RNAseq_assembly_pipeline.sh** - used to trim/filter RNAseq fastq data, align to Razorback Sucker reference genome, and estimate transcript abundance
 2. **getLongestTranscript.pl** - returns longest transcript of each gene from the reference-guided hisat2/stringtie transcriptome assembly. 
